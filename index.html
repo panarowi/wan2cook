@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!<![endif]-->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>4cook</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./style/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./scripts/config.js" async defer></script>
+    <script src="./scripts/script.js" async defer></script>
+    <script src="./scripts/main.js" async defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>4cook</h1>
+      <h2>the app that gives you <span>cooking</span> ideas!</h2>
+    </header>
+    <main>
+      <img src="./img/chef.webp" class="chefimage" />
+
+      <h3 class="scenario">
+        first thing first, open your <span>fridge</span> and tell me what you
+        have in stock.
+      </h3>
+      <h3 class="scenario">
+        add below one <span>ingredient</span> at a time then press enter.
+      </h3>
+      <div class="ingredients-container">
+        <div class="ingredient-block">
+          <input
+            type="text"
+            name="ingredient"
+            id="ingredient"
+            size="100"
+            placeholder="add an ingredient.."
+            autocomplete="off"
+          />
+          <div class="reset-line">
+            <!-- <button>
+              <img src="./img/reset.png" alt="reset-button" />
+            </button> -->
+          </div>
+          <div class="ingredients-list">
+            <ul class="ingredients-ul"></ul>
+          </div>
+        </div>
+      </div>
+      <button class="generate-button">give meal ideas</button>
+      <div class="recipe-container">
+        <!-- <ul class="meals-ul"></ul> -->
+      </div>
+    </main>
+  </body>
+</html>
