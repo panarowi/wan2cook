@@ -83,6 +83,7 @@ input[name="ingredient"]:focus {
   font-weight: 300;
   line-height: 30px;
   overflow-wrap: break-word;
+  text-align: center;
 }
 
 .reset-line {
@@ -94,6 +95,8 @@ input[name="ingredient"]:focus {
 .ingredients-ul {
   columns: 100px 4;
   margin: auto;
+  display: inline-block;
+  text-align: left;
 }
 
 .ingredients-ul li {
@@ -109,6 +112,19 @@ input[name="ingredient"]:focus {
 #reset-icon {
   object-fit: contain;
   margin: auto 5px auto 5px;
+}
+
+.cuisine-type-container{
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 2em;
+  width: 800px;
+  margin: auto;
+}
+
+.cuisine-type-element{
+  min-width: 200px;
 }
 
 .generate-button {

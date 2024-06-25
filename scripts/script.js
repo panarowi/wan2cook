@@ -52,7 +52,6 @@ document.body.addEventListener("click", function (event) {
       .item(0).innerHTML;
     userIngredients.splice(userIngredients.indexOf(targetedElement), 1);
     event.target.parentElement.remove();
-    selectMeals();
     generateCards(mealIdeas);
   }
 });
@@ -69,6 +68,27 @@ function formatIngredientsURL(ingredients) {
   return formattedURL
 }
 
+// add cuisine type to list
+// function addToCuisineList() {
+//   let cuisineTypeList = [];
+//   let checkBoxes = document.querySelectorAll('.cuisine-type:checked');
+//   for (let i=0; i<checkBoxes.length; i++) {
+//     if (!cuisineTypeList.includes(checkBoxes[i].name)) {
+//       cuisineTypeList.push(checkBoxes[i].name)
+//     }
+//   }
+//   return cuisineTypeList
+// }
+
+
+// format URL with cuisine type
+function formatCuisineType() {
+  const selectedCuisine = document.querySelector(".cuisine-type:checked").id
+  const cuisineTypeClean = selectedCuisine.replaceAll(" ", "%20")
+  console.log(cuisineTypeClean)
+  return cuisineTypeClean
+}
+
 const app_id = "42bf6183";
 const app_key = "a57dbe2f0ef9f49639879cfafb5b3bbf";
 const url = "https://api.edamam.com/api/recipes/v2";
@@ -77,11 +97,12 @@ let fullData = {};
 // fetch function for API request; might move generateCards func from it
 async function fetchAPI() {
   let q = formatIngredientsURL(userIngredients)
-  const baseURL = `https://api.edamam.com/api/recipes/v2?type=public&q=${q}&app_id=${app_id}&app_key=${app_key}&cuisineType=Asian`
+  let cuisineOrigin = formatCuisineType()
+  const baseURL = `https://api.edamam.com/api/recipes/v2?type=public&q=${q}&app_id=${app_id}&app_key=${app_key}&cuisineType=${cuisineOrigin}`
   const response = await fetch(baseURL)
   const data = await response.json();
   fullData = data
-  console.log(fullData)
+  console.log(baseURL)
 }
 
 // make list of meals with user ingredients, make list of ingredients for the 5 first generated meals
@@ -150,7 +171,7 @@ async function executionOrder() {
 const generateCards = (recipes) => {
   const recipeContainer = document.querySelector(".recipe-container");
   recipeContainer.innerHTML = "";
-  console.log(fullData)
+  // console.log(fullData)
   for (let i = 0; i < recipes.length; i++) {
     const recipe = recipes[i];
     const card = document.createElement("article");
@@ -176,5 +197,21 @@ const generateCards = (recipes) => {
 generateButton.addEventListener("click", () => {
   // fetchAPI();
   // generateCards(groupRecipeName(fullData)[0])
+
   executionOrder()
+
 });
+
+
+
+
+// document.body.addEventListener("click", function () {
+//   let cuisineTypeList = [];
+//   let checkBoxes = document.querySelectorAll('.cuisine-type:checked');
+//   for (let i=0; i<checkBoxes.length; i++) {
+//     if (!cuisineTypeList.includes(checkBoxes[i].name)) {
+//       cuisineTypeList.push(checkBoxes[i].name)
+//     }
+//   }
+//   console.log(cuisineTypeList)
+// })
