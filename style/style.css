@@ -1,5 +1,6 @@
 :root {
   --purple: #853efb;
+  --light-purple: #d9d4fa;
   --grey: #685c7a;
   --dark: #2a2533;
   font-family: "Outfit", sans-serif;
@@ -49,7 +50,7 @@ h3 {
   flex-direction: column;
   max-width: 800px;
   margin: calc(var(--base-unit) * 4) auto calc(var(--base-unit) * 4) auto;
-  background-color: #d9d4fa;
+  background-color: var(--light-purple);
   border-radius: 20px;
 }
 
@@ -116,16 +117,46 @@ input[name="ingredient"]:focus {
 
 .cuisine-type-container{
   display: flex;
+  justify-content: space-around;
   flex-wrap: wrap;
-
-  gap: 2em;
+  gap: 1em;
   width: 800px;
   margin: auto;
 }
 
+
 .cuisine-type-element{
-  min-width: 200px;
+  min-width: 140px;
 }
+
+.cuisine-type-element [type="radio"]{
+  display: none;
+}
+
+.cuisine-type-element label {
+  display: block;
+  padding: 10px;
+  background: var(--light-purple);
+  border: var(--light-purple) 2px solid;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s ease-in-out 0s;
+}
+
+
+
+.cuisine-type-element [type="radio"]:checked ~ label{
+  border: var(--purple) 2px solid ;
+  background-color: var(--purple);
+  color: white;
+}
+
+/* .cuisine-type-element[type="radio"]:checked ~ label::before{
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+}  */
+
 
 .generate-button {
   background-color: var(--purple);
