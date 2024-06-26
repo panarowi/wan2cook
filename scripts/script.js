@@ -102,7 +102,7 @@ async function fetchAPI() {
   const response = await fetch(baseURL)
   const data = await response.json();
   fullData = data
-  console.log(baseURL)
+  console.log(fullData)
 }
 
 // make list of meals with user ingredients, make list of ingredients for the 5 first generated meals
@@ -113,11 +113,16 @@ function groupRecipeName(data) {
   let secondRecipeIngredients = []
   let thirdRecipeIngredients = []
   let fourthRecipeIngredients = []
-  let fifthRecipeIngredients = [];
+  let fifthRecipeIngredients = []
+  let sixthRecipeIngredients = []
+  let seventhRecipeIngredients = []
+  let eighthRecipeIngredients = []
+  let ninethRecipeIngredients = []
+  let tenthRecipeIngredients = []
 
   for (let i = 0; i<recipeApiList.length; i++) {
     recipeNameList.push(recipeApiList[i].recipe.label)
- 
+
     switch (i) {
       case 0:
         for (let j = 0; j<recipeApiList[i].recipe.ingredientLines.length; j++) {
@@ -144,6 +149,32 @@ function groupRecipeName(data) {
           fifthRecipeIngredients.push(recipeApiList[i].recipe.ingredientLines[j])
         }
         break;
+      case 5:
+        for (let j = 0; j<recipeApiList[i].recipe.ingredientLines.length; j++) {
+          sixthRecipeIngredients.push(recipeApiList[i].recipe.ingredientLines[j])
+        }
+        break;
+      case 6:
+        for (let j = 0; j<recipeApiList[i].recipe.ingredientLines.length; j++) {
+          seventhRecipeIngredients.push(recipeApiList[i].recipe.ingredientLines[j])
+        }
+        break;
+      case 7:
+        for (let j = 0; j<recipeApiList[i].recipe.ingredientLines.length; j++) {
+          eighthRecipeIngredients.push(recipeApiList[i].recipe.ingredientLines[j])
+        }
+        break;
+      case 8:
+        for (let j = 0; j<recipeApiList[i].recipe.ingredientLines.length; j++) {
+          ninethRecipeIngredients.push(recipeApiList[i].recipe.ingredientLines[j])
+        }
+        break;
+      case 9:
+        for (let j = 0; j<recipeApiList[i].recipe.ingredientLines.length; j++) {
+          tenthRecipeIngredients.push(recipeApiList[i].recipe.ingredientLines[j])
+        }
+        break;
+            
     }
   }
 
@@ -153,7 +184,12 @@ function groupRecipeName(data) {
     secondRecipeIngredients,
     thirdRecipeIngredients,
     fourthRecipeIngredients,
-    fifthRecipeIngredients
+    fifthRecipeIngredients,
+    sixthRecipeIngredients,
+    seventhRecipeIngredients,
+    eighthRecipeIngredients,
+    ninethRecipeIngredients,
+    tenthRecipeIngredients
   ];
 
 }
@@ -171,35 +207,34 @@ async function executionOrder() {
 const generateCards = (recipes) => {
   const recipeContainer = document.querySelector(".recipe-container");
   recipeContainer.innerHTML = "";
-  // console.log(fullData)
+
   for (let i = 0; i < recipes.length; i++) {
     const recipe = recipes[i];
     const card = document.createElement("article");
     const recipeName = document.createElement("h2");
     recipeName.innerText = recipe;
-    // const recipeImg = document.createElement("img");
+    const imgUrl = fullData.hits[i].recipe.images["SMALL"].url
+    const recipeImg = document.createElement("img");
+    recipeImg.setAttribute("src", imgUrl)
     const mealIngredientsList = document.createElement("ul")
+
     for (let j = 0; j < groupRecipeName(fullData)[i+1].length; j++) {
+      // console.log(groupRecipeName(fullData)[i+1])
       const item = document.createElement("li")
       item.innerText = groupRecipeName(fullData)[i+1][j]
       mealIngredientsList.appendChild(item)
-      // itemsInList += `<li>${groupRecipeName(fullData)[i+1][j]}</li>`
     }
+    
     recipeContainer.appendChild(card);
     card.appendChild(recipeName);
+    card.appendChild(recipeImg)
     card.appendChild(mealIngredientsList)
-    // card.appendChild(recipeImg);
-    // card.appendChild(groupRecipeName(fullData)[i]);
   }
 };
 
 // trigger API request on button click
 generateButton.addEventListener("click", () => {
-  // fetchAPI();
-  // generateCards(groupRecipeName(fullData)[0])
-
   executionOrder()
-
 });
 
 

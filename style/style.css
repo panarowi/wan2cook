@@ -136,6 +136,7 @@ input[name="ingredient"]:focus {
 .cuisine-type-element label {
   display: block;
   padding: 10px;
+  text-align: center;
   background: var(--light-purple);
   border: var(--light-purple) 2px solid;
   border-radius: 8px;
