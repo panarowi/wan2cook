@@ -4,7 +4,7 @@
   --grey: #685c7a;
   --dark: #2a2533;
   font-family: "Outfit", sans-serif;
-  --base-unit: 20px;
+  --base-unit: 1rem;
   --white: #F4F5FA;
   --white2: #F2F3F4
 }
@@ -18,7 +18,7 @@
 
 header * {
   text-align: center;
-  margin: calc(var(--base-unit) * 4) auto calc(var(--base-unit) * 4) auto;
+  margin: 4rem auto 4rem auto;
 }
 
 header h1 {
@@ -26,7 +26,7 @@ header h1 {
 }
 
 header h2 {
-  font-weight: 200;
+  font-weight: 300;
 }
 
 span {
@@ -37,40 +37,39 @@ span {
 h3 {
   text-align: center;
   font-weight: 300;
-  margin: var(--base-unit) auto var(--base-unit) auto;
+  margin: 1rem auto 1rem auto;
 }
 
 .chefimage {
   display: block;
-  margin: auto auto calc(var(--base-unit) * 4) auto;
+  margin: auto auto 4rem auto;
   border-radius: 100%;
-  width: 400px;
-  height: 400px;
+  width: 15rem;
+  height: 15rem;
   object-fit: cover;
 }
 
 .ingredients-container {
   display: flex;
   flex-direction: column;
-  max-width: 800px;
-  margin: calc(var(--base-unit) * 4) auto calc(var(--base-unit) * 4) auto;
+  max-width: 50rem;
+  margin: 4rem auto 4rem auto;
   background-color: var(--light-purple);
   border-radius: 20px;
 }
 
 input[name="ingredient"] {
-  height: 100px;
+  height: 5rem;
   font-family: "Outfit", sans-serif;
-  max-width: 400px;
+  max-width: 25rem;
   display: block;
-  margin: calc(var(--base-unit) * 4) auto var(--base-unit) auto;
+  margin: 4rem auto 1rem auto;
   text-align: center;
   border-radius: 8px;
   border-color: var(--grey);
   font-size: 1.3em;
   color: var(--purple);
   transition-duration: 0.2s;
-
 }
 
 input[name="ingredient"]:focus {
@@ -90,9 +89,8 @@ input[name="ingredient"]:focus::placeholder{
 .ingredients-list {
   display: flex;
   justify-content: left;
-  margin-bottom: calc(var(--base-unit) * 4);
+  margin-bottom: 4rem;
   font-weight: 300;
-  line-height: 30px;
   overflow-wrap: break-word;
   text-align: center;
 }
@@ -104,7 +102,7 @@ input[name="ingredient"]:focus::placeholder{
 }
 
 .ingredients-ul {
-  columns: 100px 4;
+  columns: 6.25rem 4;
   margin: auto;
   display: inline-block;
   text-align: left;
@@ -119,13 +117,13 @@ input[name="ingredient"]:focus::placeholder{
 .ingredients-li {
   display: flex;
   justify-content: left;
-  line-height: 50px;
+  line-height: 3.125rem;
   background-color: var(--light-purple);
 }
 
 #reset-icon {
   object-fit: contain;
-  margin: auto 5px auto 5px;
+  margin: auto 0.5rem auto 0.5rem;
   transition-duration: 0.2s;
   background-color: var(--light-purple);
 }
@@ -139,13 +137,13 @@ input[name="ingredient"]:focus::placeholder{
   justify-content: space-around;
   flex-wrap: wrap;
   gap: 1em;
-  width: 800px;
+  width: 50rem;
   margin: auto;
 }
 
 
 .cuisine-type-element{
-  min-width: 140px;
+  min-width: 8rem
 }
 
 .cuisine-type-element [type="radio"]{
@@ -154,7 +152,7 @@ input[name="ingredient"]:focus::placeholder{
 
 .cuisine-type-element label {
   display: block;
-  padding: 10px;
+  padding: 0.7rem;
   text-align: center;
   background: var(--light-purple);
   border: var(--light-purple) 2px solid;
@@ -183,15 +181,16 @@ input[name="ingredient"]:focus::placeholder{
   background-color: var(--purple);
   border: none;
   color: white;
-  padding: 16px 32px;
+  padding: 1rem 2rem;
   text-align: center;
   text-decoration: none;
   transition-duration: 0.1s;
   cursor: pointer;
   display: flex;
-  margin: calc(var(--base-unit) * 4) auto calc(var(--base-unit) * 4) auto;
+  margin: 4rem auto 4rem auto;
   font-size: 1.2em;
   border-radius: 10px;
+  font-family: "Outfit", sans-serif;
   border: white 2px solid;
 }
 
@@ -206,17 +205,17 @@ input[name="ingredient"]:focus::placeholder{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: var(--base-unit);
-  max-width: 1200px;
-  margin: calc(var(--base-unit) * 4) auto calc(var(--base-unit) * 4) auto;
+  max-width: 75rem;
+  margin: 4rem auto 4rem auto;
   border-radius: 20px;
 }
 
 .recipe-container article {
-  padding: 20px;
+  padding: 1.25rem;
   background-color: #d9d4fa;
   border-radius: 10px;
-  width: 300px;
-  height: 400px;
+  width: 18.75rem;
+  height: 25rem;
   text-align: center;
   margin: auto;
   box-shadow: 1px 1px 3px grey;
@@ -249,10 +248,11 @@ article img {
   transition-duration: 0.1s;
   cursor: pointer;
   display: flex;
-  margin: calc(var(--base-unit)) auto calc(var(--base-unit)) auto;
+  margin: 1rem auto 1rem auto;
   font-size: 1.2em;
   border-radius: 10px;
   border: var(--purple) 2px solid;
+  font-family: "Outfit", sans-serif;
 }
 
 .recipe-button:hover{
@@ -264,4 +264,122 @@ article img {
 
 a{
   text-decoration: none;
+}
+
+@media (width <= 480px) {
+
+header * {
+  margin: 2rem auto 2rem auto;
+}
+
+h1{
+  font-size: x-large;
+}
+
+header h2{
+  font-size: medium;
+}
+
+.chefimage{
+  width: 10rem;
+  height: 10rem;
+  margin: auto ;
+}
+
+h3{
+  font-size: medium;
+  margin: 1rem
+}
+
+.ingredients-container{
+  margin: 4rem 1rem 4rem 1rem;
+}
+
+.ingredient-block{
+  margin: auto 1rem auto 1rem;
+}
+
+input[name="ingredient"]{
+  margin-top: 3rem;
+}
+
+#ingredient{
+  max-width: 15rem;
+  height: 3rem;
+  font-size: medium;
+}
+
+.ingredients-list{
+  font-size: small;
+  margin-bottom: 2rem;
+}
+
+.ingredients-li{
+  line-height: 2rem;
+}
+
+#reset-icon{
+  margin: 0 0.5rem 0 0;
+  width: 1rem;
+}
+
+.cuisine-type-container{
+  max-width: 95vw;
+  gap: 0.5rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  justify-content: start;
+}
+
+.cuisine-type-element{
+  min-width: 30vw;
+  font-size: small;
+}
+
+.cuisine-type-element label{
+  padding: 0.5rem;
+}
+
+.generate-button,
+.recipe-button{
+  font-size: medium;
+  font-family: "Outfit", sans-serif;
+  padding: 0.7rem 2rem;
+}
+
+.recipe-container{
+  display: block;
+}
+
+.recipe-container article{
+  width: 15rem;
+  height: auto;
+  padding: 0.5rem;
+  margin-bottom: 1em;
+}
+
+.recipe-container h2{
+  height: 5em;
+  font-size: large;
+}
+
+.recipe-button{
+  padding: 0.5rem 1rem;
+}
+
+}
+
+@media (481px <= width <= 768px) {
+
+
+}
+
+@media (769px <= width <= 1200px) {
+
+
+}
+
+@media (width > 1200px) {
+
+
 }
