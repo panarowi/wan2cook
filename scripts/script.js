@@ -109,94 +109,94 @@ async function fetchAPI() {
 function groupRecipeName(data) {
   const recipeApiList = data.hits
   let recipeNameList = [];
-  let firstRecipeIngredients = []
-  let secondRecipeIngredients = []
-  let thirdRecipeIngredients = []
-  let fourthRecipeIngredients = []
-  let fifthRecipeIngredients = []
-  let sixthRecipeIngredients = []
-  let seventhRecipeIngredients = []
-  let eighthRecipeIngredients = []
-  let ninethRecipeIngredients = []
-  let tenthRecipeIngredients = []
+  // let firstRecipeIngredients = []
+  // let secondRecipeIngredients = []
+  // let thirdRecipeIngredients = []
+  // let fourthRecipeIngredients = []
+  // let fifthRecipeIngredients = []
+  // let sixthRecipeIngredients = []
+  // let seventhRecipeIngredients = []
+  // let eighthRecipeIngredients = []
+  // let ninethRecipeIngredients = []
+  // let tenthRecipeIngredients = []
 
   for (let i = 0; i<recipeApiList.length; i++) {
     recipeNameList.push(recipeApiList[i].recipe.label)
-
-    switch (i) {
-      case 0:
-        for (let j = 0; j<recipeApiList[i].recipe.ingredientLines.length; j++) {
-          firstRecipeIngredients.push(recipeApiList[i].recipe.ingredientLines[j])
-        }
-        break;
-      case 1:
-        for (let j = 0; j<recipeApiList[i].recipe.ingredientLines.length; j++) {
-          secondRecipeIngredients.push(recipeApiList[i].recipe.ingredientLines[j])
-        }
-        break;
-      case 2:
-        for (let j = 0; j<recipeApiList[i].recipe.ingredientLines.length; j++) {
-          thirdRecipeIngredients.push(recipeApiList[i].recipe.ingredientLines[j])
-        }
-        break;
-      case 3:
-        for (let j = 0; j<recipeApiList[i].recipe.ingredientLines.length; j++) {
-          fourthRecipeIngredients.push(recipeApiList[i].recipe.ingredientLines[j])
-        }
-        break;
-      case 4:
-        for (let j = 0; j<recipeApiList[i].recipe.ingredientLines.length; j++) {
-          fifthRecipeIngredients.push(recipeApiList[i].recipe.ingredientLines[j])
-        }
-        break;
-      case 5:
-        for (let j = 0; j<recipeApiList[i].recipe.ingredientLines.length; j++) {
-          sixthRecipeIngredients.push(recipeApiList[i].recipe.ingredientLines[j])
-        }
-        break;
-      case 6:
-        for (let j = 0; j<recipeApiList[i].recipe.ingredientLines.length; j++) {
-          seventhRecipeIngredients.push(recipeApiList[i].recipe.ingredientLines[j])
-        }
-        break;
-      case 7:
-        for (let j = 0; j<recipeApiList[i].recipe.ingredientLines.length; j++) {
-          eighthRecipeIngredients.push(recipeApiList[i].recipe.ingredientLines[j])
-        }
-        break;
-      case 8:
-        for (let j = 0; j<recipeApiList[i].recipe.ingredientLines.length; j++) {
-          ninethRecipeIngredients.push(recipeApiList[i].recipe.ingredientLines[j])
-        }
-        break;
-      case 9:
-        for (let j = 0; j<recipeApiList[i].recipe.ingredientLines.length; j++) {
-          tenthRecipeIngredients.push(recipeApiList[i].recipe.ingredientLines[j])
-        }
-        break;
-            
+    
+////////////////////////// used to display ingredients on cards
+    {
+    
+    // switch (i) {
+    //   case 0:
+    //     for (let j = 0; j<recipeApiList[i].recipe.ingredientLines.length; j++) {
+    //       firstRecipeIngredients.push(recipeApiList[i].recipe.ingredientLines[j])
+    //     }
+    //     break;
+    //   case 1:
+    //     for (let j = 0; j<recipeApiList[i].recipe.ingredientLines.length; j++) {
+    //       secondRecipeIngredients.push(recipeApiList[i].recipe.ingredientLines[j])
+    //     }
+    //     break;
+    //   case 2:
+    //     for (let j = 0; j<recipeApiList[i].recipe.ingredientLines.length; j++) {
+    //       thirdRecipeIngredients.push(recipeApiList[i].recipe.ingredientLines[j])
+    //     }
+    //     break;
+    //   case 3:
+    //     for (let j = 0; j<recipeApiList[i].recipe.ingredientLines.length; j++) {
+    //       fourthRecipeIngredients.push(recipeApiList[i].recipe.ingredientLines[j])
+    //     }
+    //     break;
+    //   case 4:
+    //     for (let j = 0; j<recipeApiList[i].recipe.ingredientLines.length; j++) {
+    //       fifthRecipeIngredients.push(recipeApiList[i].recipe.ingredientLines[j])
+    //     }
+    //     break;
+    //   case 5:
+    //     for (let j = 0; j<recipeApiList[i].recipe.ingredientLines.length; j++) {
+    //       sixthRecipeIngredients.push(recipeApiList[i].recipe.ingredientLines[j])
+    //     }
+    //     break;
+    //   case 6:
+    //     for (let j = 0; j<recipeApiList[i].recipe.ingredientLines.length; j++) {
+    //       seventhRecipeIngredients.push(recipeApiList[i].recipe.ingredientLines[j])
+    //     }
+    //     break;
+    //   case 7:
+    //     for (let j = 0; j<recipeApiList[i].recipe.ingredientLines.length; j++) {
+    //       eighthRecipeIngredients.push(recipeApiList[i].recipe.ingredientLines[j])
+    //     }
+    //     break;
+    //   case 8:
+    //     for (let j = 0; j<recipeApiList[i].recipe.ingredientLines.length; j++) {
+    //       ninethRecipeIngredients.push(recipeApiList[i].recipe.ingredientLines[j])
+    //     }
+    //     break;
+    //   case 9:
+    //     for (let j = 0; j<recipeApiList[i].recipe.ingredientLines.length; j++) {
+    //       tenthRecipeIngredients.push(recipeApiList[i].recipe.ingredientLines[j])
+    //     }
+    //     break; 
     }
   }
 
-  return [
-    recipeNameList, 
-    firstRecipeIngredients, 
-    secondRecipeIngredients,
-    thirdRecipeIngredients,
-    fourthRecipeIngredients,
-    fifthRecipeIngredients,
-    sixthRecipeIngredients,
-    seventhRecipeIngredients,
-    eighthRecipeIngredients,
-    ninethRecipeIngredients,
-    tenthRecipeIngredients
-  ];
-
+  return recipeNameList;
+    // firstRecipeIngredients, 
+    // secondRecipeIngredients,
+    // thirdRecipeIngredients,
+    // fourthRecipeIngredients,
+    // fifthRecipeIngredients,
+    // sixthRecipeIngredients,
+    // seventhRecipeIngredients,
+    // eighthRecipeIngredients,
+    // ninethRecipeIngredients,
+    // tenthRecipeIngredients
 }
 
 async function executionOrder() {
   await fetchAPI()
-  generateCards(groupRecipeName(fullData)[0])
+  generateCards(groupRecipeName(fullData))
+  // getRecipeLinks(fullData)
 }
 
 /**
@@ -216,28 +216,48 @@ const generateCards = (recipes) => {
     const imgUrl = fullData.hits[i].recipe.images["SMALL"].url
     const recipeImg = document.createElement("img");
     recipeImg.setAttribute("src", imgUrl)
-    const mealIngredientsList = document.createElement("ul")
 
-    for (let j = 0; j < groupRecipeName(fullData)[i+1].length; j++) {
-      // console.log(groupRecipeName(fullData)[i+1])
-      const item = document.createElement("li")
-      item.innerText = groupRecipeName(fullData)[i+1][j]
-      mealIngredientsList.appendChild(item)
-    }
+    const recipeLink = document.createElement("a")
+    recipeLink.setAttribute("target", "_blank")
+    recipeLink.setAttribute("href", getRecipeLinks(fullData)[i])
+
+    const recipeButton = document.createElement("button")
+    recipeButton.setAttribute("class", "recipe-button")
+    recipeButton.innerText = "yum"
+
+    /////////////////////////////// used to display ingredients on cards
+    // const mealIngredientsList = document.createElement("ul")
+    // for (let j = 0; j < groupRecipeName(fullData)[i+1].length; j++) {
+    //   // console.log(groupRecipeName(fullData)[i+1])
+    //   const item = document.createElement("li")
+    //   item.innerText = groupRecipeName(fullData)[i+1][j]
+    //   mealIngredientsList.appendChild(item)
+    // }
     
     recipeContainer.appendChild(card);
     card.appendChild(recipeName);
     card.appendChild(recipeImg)
-    card.appendChild(mealIngredientsList)
+    recipeLink.appendChild(recipeButton)
+    card.appendChild(recipeLink)
+
+
+    // card.appendChild(mealIngredientsList)
   }
 };
 
 // trigger API request on button click
 generateButton.addEventListener("click", () => {
   executionOrder()
+
 });
 
-
+function getRecipeLinks(data){
+  let recipeLinksList = []
+  for (let i=0; i<data.hits.length; i++) {
+    recipeLinksList.push(data.hits[i].recipe.url)
+  }
+  return recipeLinksList
+}
 
 
 // document.body.addEventListener("click", function () {

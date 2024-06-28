@@ -5,12 +5,15 @@
   --dark: #2a2533;
   font-family: "Outfit", sans-serif;
   --base-unit: 20px;
+  --white: #F4F5FA;
+  --white2: #F2F3F4
 }
 
 * {
   margin: 0;
   padding: 0;
   color: var(--dark);
+  background-color: var(--white2);
 }
 
 header * {
@@ -28,6 +31,7 @@ header h2 {
 
 span {
   color: var(--purple);
+  font-weight: bold;
 }
 
 h3 {
@@ -56,16 +60,17 @@ h3 {
 
 input[name="ingredient"] {
   height: 100px;
+  font-family: "Outfit", sans-serif;
   max-width: 400px;
   display: block;
   margin: calc(var(--base-unit) * 4) auto var(--base-unit) auto;
-  text-align: right;
-  padding-right: 20px;
+  text-align: center;
   border-radius: 8px;
   border-color: var(--grey);
   font-size: 1.3em;
   color: var(--purple);
   transition-duration: 0.2s;
+
 }
 
 input[name="ingredient"]:focus {
@@ -73,8 +78,13 @@ input[name="ingredient"]:focus {
   outline: none !important;
 }
 
+input[name="ingredient"]:focus::placeholder{
+  color: transparent;
+}
+
 .ingredient-block {
   margin: auto;
+  background-color: var(--light-purple);
 }
 
 .ingredients-list {
@@ -98,21 +108,30 @@ input[name="ingredient"]:focus {
   margin: auto;
   display: inline-block;
   text-align: left;
+  background-color: var(--light-purple);
 }
 
 .ingredients-ul li {
   list-style-type: none;
+  background-color: var(--light-purple);
 }
 
 .ingredients-li {
   display: flex;
   justify-content: left;
   line-height: 50px;
+  background-color: var(--light-purple);
 }
 
 #reset-icon {
   object-fit: contain;
   margin: auto 5px auto 5px;
+  transition-duration: 0.2s;
+  background-color: var(--light-purple);
+}
+
+#reset-icon:hover {
+  transform: rotate(180deg);
 }
 
 .cuisine-type-container{
@@ -144,7 +163,11 @@ input[name="ingredient"]:focus {
   transition: 0.2s ease-in-out 0s;
 }
 
-
+.cuisine-type-element label:hover{
+  border: var(--purple) 2px solid;
+  background-color: white;
+  box-shadow: 5px 5px 5px var(--purple);
+}
 
 .cuisine-type-element [type="radio"]:checked ~ label{
   border: var(--purple) 2px solid ;
@@ -152,14 +175,11 @@ input[name="ingredient"]:focus {
   color: white;
 }
 
-/* .cuisine-type-element[type="radio"]:checked ~ label::before{
-  opacity: 1;
-  visibility: visible;
-  transform: scale(1);
-}  */
+.cuisine-type-element [type="radio"]:checked ~ label:hover{
+  box-shadow: none;
+}
 
-
-.generate-button {
+.generate-button{
   background-color: var(--purple);
   border: none;
   color: white;
@@ -179,6 +199,7 @@ input[name="ingredient"]:focus {
   background-color: white;
   color: var(--purple);
   border: var(--purple) 2px solid;
+  box-shadow: 5px 5px 5px var(--purple);
 }
 
 .recipe-container {
@@ -195,15 +216,52 @@ input[name="ingredient"]:focus {
   background-color: #d9d4fa;
   border-radius: 10px;
   width: 300px;
-  height: 300px;
+  height: 400px;
   text-align: center;
   margin: auto;
+  box-shadow: 1px 1px 3px grey;
 }
 
 .recipe-container h2 {
   font-weight: 300;
+  height: 5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--light-purple);
 }
 
 .recipe-container li {
   list-style-type: none;
+}
+
+article img {
+  border-radius: 10px;
+}
+
+.recipe-button{
+  background-color: var(--purple);
+  border: none;
+  color: white;
+  padding: 0.5em 1em;
+  text-align: center;
+  text-decoration: none;
+  transition-duration: 0.1s;
+  cursor: pointer;
+  display: flex;
+  margin: calc(var(--base-unit)) auto calc(var(--base-unit)) auto;
+  font-size: 1.2em;
+  border-radius: 10px;
+  border: var(--purple) 2px solid;
+}
+
+.recipe-button:hover{
+  background-color: white;
+  color:var(--purple);
+  border: var(--purple) 2px solid;
+  box-shadow: 5px 5px 5px var(--purple);
+}
+
+a{
+  text-decoration: none;
 }
