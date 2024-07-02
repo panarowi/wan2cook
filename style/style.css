@@ -16,12 +16,22 @@
   background-color: var(--white2);
 }
 
-header * {
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
   text-align: center;
-  margin: 4rem auto 4rem auto;
+  margin: auto;
 }
 
-header h1 {
+/* header * {
+  text-align: center;
+  margin: 4rem auto 4rem auto;
+} */
+
+h1 {
   color: var(--purple);
 }
 
@@ -37,15 +47,16 @@ span {
 h3 {
   text-align: center;
   font-weight: 300;
-  margin: 1rem auto 1rem auto;
+  /* margin: 1rem auto 1rem auto; */
 }
 
 .chefimage {
   display: block;
-  margin: auto auto 4rem auto;
+  /* margin: auto auto 4rem auto; */
   border-radius: 100%;
   width: 15rem;
   height: 15rem;
+  margin: auto;
   object-fit: cover;
 }
 
@@ -64,12 +75,20 @@ input[name="ingredient"] {
   max-width: 25rem;
   display: block;
   margin: 4rem auto 1rem auto;
-  text-align: center;
+  text-align: left;
+  padding-left: 1rem;
+  padding-right: 1rem;
   border-radius: 8px;
   border-color: var(--grey);
   font-size: 1.3em;
   color: var(--purple);
   transition-duration: 0.2s;
+}
+
+input::-webkit-search-cancel-button{
+  /* -webkit-appearance: none; */
+  /* background: #222; */
+  color: #000000;
 }
 
 input[name="ingredient"]:focus {
@@ -111,7 +130,7 @@ input[name="ingredient"]:focus::placeholder{
 
 .ingredients-ul li {
   list-style-type: none;
-  background-color: var(--light-purple);
+  background-color: transparent;
 }
 
 .ingredients-li {
@@ -125,7 +144,7 @@ input[name="ingredient"]:focus::placeholder{
   object-fit: contain;
   margin: auto 0.5rem auto 0.5rem;
   transition-duration: 0.2s;
-  background-color: var(--light-purple);
+  /* background-color: none; */
 }
 
 #reset-icon:hover {
@@ -187,7 +206,7 @@ input[name="ingredient"]:focus::placeholder{
   transition-duration: 0.1s;
   cursor: pointer;
   display: flex;
-  margin: 4rem auto 4rem auto;
+  /* margin: 4rem auto 4rem auto; */
   font-size: 1.2em;
   border-radius: 10px;
   font-family: "Outfit", sans-serif;
@@ -206,7 +225,7 @@ input[name="ingredient"]:focus::placeholder{
   grid-template-columns: repeat(3, 1fr);
   grid-gap: var(--base-unit);
   max-width: 75rem;
-  margin: 4rem auto 4rem auto;
+  margin: auto;
   border-radius: 20px;
 }
 
@@ -268,8 +287,21 @@ a{
 
 @media (width <= 480px) {
 
-header * {
-  margin: 2rem auto 2rem auto;
+main {
+  margin: 2rem 1rem 2rem 1rem;
+  gap: 1rem
+}
+
+
+/* header *{
+  margin: auto auto 1rem auto;
+} */
+
+header{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
 }
 
 h1{
@@ -283,24 +315,29 @@ header h2{
 .chefimage{
   width: 10rem;
   height: 10rem;
-  margin: auto ;
+  margin: auto;
 }
 
 h3{
   font-size: medium;
-  margin: 1rem
+  margin-bottom: 1rem;
 }
 
-.ingredients-container{
-  margin: 4rem 1rem 4rem 1rem;
-}
+/* .ingredients-container{
+
+} */
 
 .ingredient-block{
-  margin: auto 1rem auto 1rem;
+  margin: auto;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  min-width: 100%;
 }
 
 input[name="ingredient"]{
-  margin-top: 3rem;
+  margin-top: 2rem;
+  
 }
 
 #ingredient{
@@ -311,24 +348,38 @@ input[name="ingredient"]{
 
 .ingredients-list{
   font-size: small;
-  margin-bottom: 2rem;
+  margin: auto 0.5rem 2rem 0.5rem;
+  background-color: var(--light-purple);
+
+}
+
+.ingredients-ul{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
 .ingredients-li{
   line-height: 2rem;
+  /* min-width: 30% */
+  border: #853efb30 1px solid;
+  border-radius: 5px;
+  padding: 0 0.5rem 0 0.5rem;
+  background-color: #853efb30;
 }
 
 #reset-icon{
   margin: 0 0.5rem 0 0;
   width: 1rem;
+  background-color: transparent;
 }
 
 .cuisine-type-container{
   max-width: 95vw;
   gap: 0.5rem;
-  margin-left: 1rem;
-  margin-right: 1rem;
-  justify-content: start;
+  min-width: 100%;
+  justify-content: center;
 }
 
 .cuisine-type-element{

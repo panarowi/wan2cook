@@ -22,11 +22,11 @@
     <script src="./scripts/main.js" async defer></script>
   </head>
   <body>
-    <header>
-      <h1>4cook</h1>
-      <h2>the app that gives you <span>cooking</span> ideas!</h2>
-    </header>
     <main>
+      <header>
+        <h1>4cook</h1>
+        <h2>the app that gives you <span>cooking</span> ideas!</h2>
+      </header>
       <img src="./img/ramen_purple.svg" class="chefimage" />
       <div class="scenario">
         <h3>
@@ -37,26 +37,26 @@
           add below one <span>ingredient</span> at a time then press enter.
         </h3>
       </div>
-      <div class="ingredients-container">
+      <!-- <div class="ingredients-container"> -->
         <div class="ingredient-block">
           <input
-            type="text"
+            type="search"
             name="ingredient"
             id="ingredient"
             size="100"
             placeholder="add an ingredient"
             autocomplete="off"
           />
-          <div class="reset-line">
+          <!-- <div class="reset-line"> -->
             <!-- <button>
               <img src="./img/reset.png" alt="reset-button" />
             </button> -->
-          </div>
+          <!-- </div> -->
           <div class="ingredients-list">
             <ul class="ingredients-ul"></ul>
           </div>
         </div>
-      </div>
+      <!-- </div> -->
       <div class="cuisine-type-container">
         <div class="cuisine-type-element">
           <input type="radio" name="cuisine-type" class="cuisine-type" id="american">
